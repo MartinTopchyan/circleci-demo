@@ -1,0 +1,7 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/projects
+      steps:
+            - checkout
+            - run: mvn clean package
