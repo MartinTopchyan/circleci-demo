@@ -5,4 +5,5 @@ jobs:
 #      working_directory: ~/projects
     steps:
       - checkout
-      - run: mvn clean package
+      - run: mvn dependency:go-offline
+      - run: mvn package
