@@ -8,7 +8,7 @@ jobs:
       - run: git clone  https://github.com/MartinTopchyan/circleci-lib.git
       - run: cd circleci-lib
       - run: mvn clean install
-      - run: cd ..
-      - run: git clone https://github.com/MartinTopchyan/circleci-demo.git
-      - run: cd circleci-demo
-      - run: mvn package
+#      - run: cd ..
+#      - run: git clone https://github.com/MartinTopchyan/circleci-demo.git
+#      - run: cd circleci-demo
+#      - run: mvn package
