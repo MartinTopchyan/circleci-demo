@@ -6,5 +6,4 @@ jobs:
     steps:
       - checkout
       - run: git clone  https://github.com/MartinTopchyan/circleci-lib.git
-
       - run: mvn package
