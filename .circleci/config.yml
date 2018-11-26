@@ -5,14 +5,6 @@ jobs:
 #      working_directory: ~/projects
     steps:
       - checkout
-      - restore_cache:
-            key: circleci-lib-demo-{{ checksum "pom.xml" }}
-
-      - run: mvn dependency:go-offline
-
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: circleci-circleci-lib-demo-{{ checksum "pom.xml" }}
+      - run: git clone  https://github.com/MartinTopchyan/circleci-lib.git
 
       - run: mvn package
