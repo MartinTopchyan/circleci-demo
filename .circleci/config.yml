@@ -6,13 +6,13 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-                key: circleci-lib-demo-{{ checksum "pom.xml" }}
+            key: circleci-lib-demo-{{ checksum "pom.xml" }}
 
-            - run: mvn dependency:go-offline
+      - run: mvn dependency:go-offline
 
-            - save_cache:
-                paths:
-                  - ~/.m2
-                key: circleci-circleci-lib-demo-{{ checksum "pom.xml" }}
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: circleci-circleci-lib-demo-{{ checksum "pom.xml" }}
 
       - run: mvn package
