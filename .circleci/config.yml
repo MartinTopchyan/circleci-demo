@@ -3,6 +3,7 @@ jobs:
   build:
     machine: true
       pre:
+        - echo "Some command"
         - run: git clone  https://github.com/MartinTopchyan/circleci-lib.git
         - run: cd circleci-lib
         - run: mvn clean install
