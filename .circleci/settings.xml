@@ -10,8 +10,8 @@
     </server>
     <server>
       <id>repo.com.waisely.snapshot</id>
-      <username>${AWS_ACCESS_KEY}</username>
-      <password>${AWS_SECRET_ACCESS_KEY}</password>
+      <username>${ACCESS_KEY}</username>
+      <password>${SECRET_ACCESS_KEY}</password>
     </server>
   </servers>
 </settings>
