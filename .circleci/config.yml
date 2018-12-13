@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     environment:
-      AWS_RESOURCE_NAME_PREFIX: 'circleci_api_demo'
+      AWS_RESOURCE_NAME_PREFIX: 'circleci-api-demo'
       AWS_ACCOUNT_ID: '154520557167'
       AWS_DEFAULT_REGION: 'us-east-2'
 #      PROJECT_VERSION: ''
@@ -56,7 +56,7 @@ jobs:
     - image: circleci/python:3.6.1
     environment:
       AWS_DEFAULT_OUTPUT: json
-      AWS_RESOURCE_NAME_PREFIX: 'circleci_api_demo'
+      AWS_RESOURCE_NAME_PREFIX: 'circleci-api-demo'
       AWS_ACCOUNT_ID: '154520557167'
       AWS_DEFAULT_REGION: 'us-east-2'
     steps:
