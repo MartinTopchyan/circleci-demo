@@ -1,0 +1,11 @@
+/src
+.pom.xml
+/.git
+
+/.settings
+.classpath
+.project
+.springBeans
+
+!obj/Docker/publish/*
+!obj/Docker/empty/
