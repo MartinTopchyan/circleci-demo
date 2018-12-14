@@ -39,7 +39,7 @@ make_task_def(){
 			"essential": true,
 			"portMappings": [
 				{
-					 "hostPort": 8081,
+					 "hostPort": 80,
             "protocol": "tcp",
             "containerPort": 8081
 				}
@@ -52,7 +52,7 @@ make_task_def(){
 
 register_definition() {
 
-    if revision=$(aws ecs register-task-definition --requires-compatibilities FARGATE --cpu 256 --memory 1024 --network-mode awsvpc --execution-role-arn $EXECUTION_ROLE_ARN --container-definitions "$task_def" --family $ECS_TASK_FAMILY_NAME | $JQ '.taskDefinition.taskDefinitionArn'); then
+    if revision=$(aws ecs register-task-definition --requires-compatibilities EC2 --cpu 256 --memory 1024 --network-mode awsvpc --execution-role-arn $EXECUTION_ROLE_ARN --container-definitions "$task_def" --family $ECS_TASK_FAMILY_NAME | $JQ '.taskDefinition.taskDefinitionArn'); then
         echo "New deployment: $revision"
     else
         echo "Failed to register task definition"
