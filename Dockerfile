@@ -8,3 +8,4 @@ WORKDIR opt/app
 EXPOSE 8081
 #Commands that will be executed in "exec" format when container runs
 ENTRYPOINT ["java", "-war", "app.war"]
+ENV myEnvVar="Using DockerFile"
