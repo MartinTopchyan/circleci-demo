@@ -8,14 +8,5 @@ WORKDIR opt/app
 EXPOSE 8081
 #Commands that will be executed in "exec" format when container runs
 ENTRYPOINT ["java", "-war", "app.war"]
-USER root
-RUN apt-get -qq update \
-   && apt-get -qq -y install \
-   curl
 
-RUN curl -sSL https://get.docker.com/ | sh
-
-RUN usermod -a -G staff jenkins
-
-USER jenkins
 ENV myEnvVar="Using DockerFile"
