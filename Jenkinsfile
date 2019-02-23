@@ -16,7 +16,7 @@ pipeline {
         stage('--package--') {
             steps {
                 sh "mvn clean package -DskipTests  "
-                sh "echo myEnvVariable =  Using DockerFile"
+                sh "echo myEnvVariable =$myEnvVar"
             }
         }
     }
