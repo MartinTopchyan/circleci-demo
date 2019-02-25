@@ -1,5 +1,7 @@
 pipeline {
-  
+  agent {
+        docker { image 'openjdk:8' }
+    }
     stages {
         stage('---clean---') {
             steps {
@@ -17,8 +19,5 @@ pipeline {
                 sh "echo myEnvVariable =$myEnvVar"
             }
         }
-    }
-     agent {
-    dockerfile true
     }
 }
