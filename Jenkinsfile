@@ -1,23 +1,30 @@
 pipeline {
-  agent {
+    stages {
+        stage('---build---') {
+            steps {
+                sh "mvn clean package -DskipTests"
+            }
+        }
+    }
+    agent {
     dockerfile true
-  }
-  stages {
-    stage('---clean---') {
-      steps {
-        sh "mvn clean install -DskipTests"
-      }
     }
-    stage('--test--') {
-      steps {
-        sh "mvn test  "
-      }
+    stages {
+        stage('---clean---') {
+            steps {
+                sh "mvn clean install -DskipTests"
+            }
+        }
+        stage('--test--') {
+             steps {
+                sh "mvn test  "
+             }
+        }
+        stage('--package--') {
+            steps {
+                sh "mvn clean package -DskipTests  "
+                sh "echo myEnvVariable =$myEnvVar"
+            }
+        }
     }
-    stage('--package--') {
-      steps {
-        sh "mvn clean package -DskipTests  "
-        sh "echo myEnvVariable =$myEnvVar"
-      }
-    }
-  }
 }
