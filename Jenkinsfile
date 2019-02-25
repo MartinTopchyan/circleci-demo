@@ -1,14 +1,5 @@
 pipeline {
-    stages {
-        stage('---build---') {
-            steps {
-                sh "mvn clean package -DskipTests"
-            }
-        }
-    }
-    agent {
-    dockerfile true
-    }
+  
     stages {
         stage('---clean---') {
             steps {
@@ -26,5 +17,8 @@ pipeline {
                 sh "echo myEnvVariable =$myEnvVar"
             }
         }
+    }
+     agent {
+    dockerfile true
     }
 }
