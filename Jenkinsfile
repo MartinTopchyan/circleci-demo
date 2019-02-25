@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 node{
     stage('SCM Checkout'){
         git credentialsId: '2b6f22aa-4a92-43db-be6d-104cba8ffd82', url: 'https://github.com/MartinTopchyan/circleci-demo.git'
